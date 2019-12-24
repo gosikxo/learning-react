@@ -18,10 +18,10 @@ class Creator extends React.Component {
   }
 
   handleChange = event => {
-    // console.log(event);
+    const newText = event.target.value;
     this.setState({
-      value: event.target.value,
-      visibleButtons: event.target.value.length > 0
+      value: newText,
+      visibleButtons: newText.length > 0
     });
   }
 
@@ -51,7 +51,7 @@ class Creator extends React.Component {
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
+        <div className={styles.buttons + ' ' + (this.state.visibleButtons ?  styles.buttonsShown : '')}>
           <Button onClick={this.handleOK}>OK</Button>
           <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
         </div>

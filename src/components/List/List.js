@@ -33,12 +33,14 @@ class List extends React.Component {
             key: newKey,
             title,
             icon: 'list-alt',
-            cards: []
-          }
-        ]
+            cards: [],
+          },
+        ],
       });
-  });
+    }
+    );
   }
+
 
   render() {
     return (
@@ -60,7 +62,7 @@ class List extends React.Component {
           <Creator text={settings.columnCreatorText} action={this.addColumn} />
         </div>
       </section>
-    )
+    );
   }
 }
 

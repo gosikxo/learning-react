@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero/Hero';
 import PropTypes from 'prop-types';
-import Column from '../Column/Column';
+import Column from '../Column/ColumnContainer';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
-import Creator from '../Creator/Creator';
+// import Creator from '../Creator/Creator';
 
 class List extends React.Component {
   static propTypes = {
@@ -19,48 +19,27 @@ class List extends React.Component {
     description: settings.defaultListDescription,
   }
 
-  state = {
-    columns: this.props.columns || [],
-  }
-
-  addColumn = (title) => {
-    this.setState(previousState => {
-      const newKey = previousState.columns.length ? previousState.columns[previousState.columns.length - 1].key + 1 : 0;
-      return ({
-        columns: [
-          ...previousState.columns,
-          {
-            key: newKey,
-            title,
-            icon: 'list-alt',
-            cards: [],
-          },
-        ],
-      });
-    }
-    );
-  }
-
-
   render() {
+    const {title, image, description, columns} = this.props;
+
     return (
       <section className={styles.component}>
-        <Hero backgroundImg={this.props.image} titleText={this.props.title} />
+        <Hero backgroundImg={image} titleText={title} />
         <div className={styles.description}>
-          {ReactHtmlParser(this.props.description)}
+          {ReactHtmlParser(description)}
         </div>
         <div className={styles.columns}>
           {
-            this.state.columns.map(
-              ({ key, ...columnProps }) => (
-                <Column key={key} {...columnProps} />
+            columns.map(
+              (columnData) => (
+                <Column key={columnData.id} {...columnData} />
               )
             )
           }
         </div>
-        <div className={styles.creator}>
+        {/* <div className={styles.creator}>
           <Creator text={settings.columnCreatorText} action={this.addColumn} />
-        </div>
+        </div> */}
       </section>
     );
   }

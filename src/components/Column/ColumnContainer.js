@@ -3,8 +3,8 @@ import Column from './Column';
 
 export const getCardsForColumn = ({cards}, columnId) => cards.filter(card => card.columnId == columnId);
 
-const mapStateToProps = (state, props) => ({
-  cards: getCardsForColumn(state, props.id),
+const mapStateToProps = (state, {id}) => ({
+  cards: getCardsForColumn(state, id),
 });
 
 export default connect(mapStateToProps)(Column);

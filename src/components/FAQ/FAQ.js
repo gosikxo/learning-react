@@ -8,8 +8,8 @@ const { title, image, questions } = settings.faq;
 const FAQ = () => (
   <Container>
     <Hero titleText={title} backgroundImg={image} />
-    {questions.map(({ question, answer }) =>
-      <div key="question">
+    {questions.map(({ question, answer }, index) =>
+      <div key={index}>
         <h3>{question}</h3><p >{answer}</p>
       </div>
     )}

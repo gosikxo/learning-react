@@ -1,0 +1,28 @@
+@import '../../styles/settings.scss';
+
+.component {
+  margin: 0 auto;
+  width: 60%;
+  background: $color-light;
+  margin-top: ($base-size * 2);
+  padding: ($base-size * 1.5);
+  border-radius: $radius;
+  box-shadow: 0 ($base-size / 4) 0 rgba(0,0,0,0.3);
+  color: $color-dark;
+}
+
+.title {
+  text-align: center;
+  font-size: ($base-size * 1.5);
+  margin: 0 0 ($base-size * 1.5) 0;
+}
+
+
+@media (max-width: 767px) {
+
+  .component {
+    width: 100%;
+    margin: $base-size 0 $base-size 0;
+  }
+
+}

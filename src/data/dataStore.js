@@ -9,6 +9,7 @@ export const settings = {
   search: {
     defaultText: 'Search...',
     icon: 'search',
+    results: 'Search results',
   },
   info: {
     title: 'Info',
@@ -98,6 +99,18 @@ const lists = [
     id: 'list-1',
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-2',
+    title: 'Places to go <sup>as fast as possible!</sup>',
+    description: 'Interesting places I want to visit!',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-3',
+    title: 'Things I have to buy <sup>now!</sup>',
+    description: 'Interesting things I have to buy!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
 ];
